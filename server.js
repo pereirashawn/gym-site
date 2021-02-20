@@ -6,7 +6,7 @@ const MongoClient = require('mongodb').MongoClient
 
 const app = express();
 const port = process.env.PORT || 8000;
-const url = 'mongodb+srv://learning:learning@cluster0.mrreb.mongodb.net/gym-site-db?retryWrites=true&w=majority'
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
