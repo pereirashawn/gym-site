@@ -37,3 +37,40 @@
     transform: rotate(360deg);
   }
 }
+
+/* NAV BAR */
+nav {
+  border-bottom: 4px solid black;
+  text-align: center;
+  position: relative;
+  top: 0;
+ 
+  background: white;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 16px 32px;
+  margin-top: 0px;
+}
+
+nav a:hover {
+  background: black;
+  color: white;
+}
