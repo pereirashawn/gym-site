@@ -8,14 +8,14 @@ import {
 
 import HomePage from './pages/HomePage'
 import SignupForm from './pages/SignupForm'
-import NavBar from './NavBar'
+import NavBar from './components/NavBar'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <NavBar/>
+       <NavBar/>
         <div className="App">
           <Switch>
             <Route path='/' component={HomePage} exact/>
