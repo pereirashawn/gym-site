@@ -10,7 +10,7 @@ function NavBar() {
     const [button,setButton] = useState(true)
 
     const showButton = () => {
-        if (window.innerWidth <= 950) {
+        if (window.innerWidth <= 960) {
             setButton(false);
         } else {
             setButton(true);
@@ -41,9 +41,10 @@ function NavBar() {
                                 Products
                             </Link>
                         </li>
+                        
                         <li className="nav-item">
                             <Link to="/signup" className="nav-links-mobile" onClick={closeMobileMenu}>
-                                SignUp
+                                Sign Up
                             </Link>
                         </li>
                     </ul>
