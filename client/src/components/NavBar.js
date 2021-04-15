@@ -10,7 +10,7 @@ function NavBar() {
     const [button,setButton] = useState(true)
 
     const showButton = () => {
-        if (window.innerWidth <= 960) {
+        if (window.innerWidth <= 820) {
             setButton(false);
         } else {
             setButton(true);

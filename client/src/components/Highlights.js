@@ -13,7 +13,7 @@ function Highlights () {
                             <HighlightItems
                                 src="/images/img-1.jpg"
                                 alt="equipment"
-                                text="Best in class Equipments"
+                                text="Best in class equipments"
                                 path="/"
                             />
                             <HighlightItems

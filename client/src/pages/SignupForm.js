@@ -68,8 +68,6 @@ class signupForm extends Component {
             password: this.state.passOne,
             checkedTrainer : this.state.checkedTrainer,
         }
-        console.log(this.state);
-        
         
         
         const result = await fetch('/api/signup' , {
@@ -98,59 +96,6 @@ class signupForm extends Component {
         })
         
     }
-
-    // validate(){
-    //     let first = this.state.firstName;
-    //     let last = this.state.lastName;
-    //     let password = this.state.password;
-    //     let email = this.state.email;
-    //     let gender = this.state.gender;
-    //     let errors = {};
-    //     let isValid = true;
-
-    //     if(!first){
-    //         isValid = false;
-    //         errors["firstName"] = "Please enter your first name";
-    //     }
-
-    //     if(!last){
-    //         isValid = false;
-    //         errors["lastName"] = "Please enter your last name";
-    //     }
-
-    //     if(!password){
-    //         isValid = false;
-    //         errors["password"] = "Please enter your password";
-    //     }
-
-    //     if(!email){
-    //         isValid = false;
-    //         errors["email"] = "Please enter your email";
-    //     }
-
-    //     if (typeof email !== "undefined") {
-          
-    //         var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-    //         if (!pattern.test(email)) {
-    //           isValid = false;
-    //           errors["email"] = "Please enter valid email address.";
-    //         }
-    //     }
-
-    //     if(!gender){
-    //         isValid = false;
-    //         errors["gender"] = "Please select your gender";
-    //     }
-        
-    //     this.setState({
-    //         errors:errors
-    //     });
-
-    //     return isValid;
-    // }
-    //onClick={this.props.formToggle}
-
-    
 
     render() {
 
