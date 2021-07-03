@@ -2,6 +2,7 @@ const enc = require('./encdec');
 const dotenv = require('dotenv');
 dotenv.config();
 
+const bcrypt = require('bcrypt')
 const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient
@@ -17,11 +18,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
+
+
 const ConnectDB = async (operations,res) => {
 
   try {
     const client = await MongoClient.connect(process.env.DB_URL, { useUnifiedTopology: true })
         const db = client.db('gym-site-db')
+        const users = db.collection('gym-users')
 
         await operations(db)
 
@@ -37,17 +41,49 @@ const ConnectDB = async (operations,res) => {
   
     ConnectDB(async(db) => {
 
-      let newUser = req.body
+      const users = db.collection('gym-users')
 
-      //console.log(req.body);
+      let newUser = req.body;
+      let duplicate = 0;
+
       newUser.password = enc.encrypt_password(newUser.password);
 
-      const insert = await db.collection('gym-users').insertOne(newUser)
+      try{
+        let dup = await users.findOne({email : newUser.email})
+        //dup = JSON.stringify(dup)
+        console.log(`returned email now : ${dup.email}`)
 
-      res.status(200).json({message : `SUCCESSFULL`})
+        if(dup.email){
+          duplicate = 1
+        }
+
+      }
+      catch(err){
+        console.log(`ERR - ${err}`)
+      }
+
+      console.log(`duplicate : ${duplicate}`)
+     
+      if(duplicate === 0){
+
+        try{
+          const insert = await db.collection('gym-users').insertOne(newUser)
+          console.log('1')
+
+          return res.status(200).json({message : `User registered successfully`})
+        }
+        catch(err){
+          console.log('2')
+          //return res.sendStatus(500).json({message : `An error occured`})
+        }
+          
+      }
+      
+      console.log('3')
+      res.status(500).json({message : `A user with that email ID already exists. Please use a different email.`})  
 
     },res)
-})
+});
   /* 
 app.post('/api/signup' , (req,res) => {
   

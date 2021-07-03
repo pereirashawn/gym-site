@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom'
 
 
 
@@ -102,7 +103,7 @@ class signupForm extends Component {
         
         return(
             
-            <div>
+            <div className='signup-page'>
 
                 <form onSubmit={this.handleSubmit} method="post" >
                     <h1>User Registration</h1>
@@ -148,8 +149,8 @@ class signupForm extends Component {
                         name="gender"
                         type="radio"
                         value="male"
-                        checked={this.state.gender === "male"}
-                        onChange={this.handleChange}
+                        //checked={this.state.gender === "male"}
+                        //onChange={this.handleChange}
                         />
                         Male
                     </label>
@@ -160,8 +161,8 @@ class signupForm extends Component {
                         name="gender"
                         type="radio"
                         value="female"
-                        checked={this.state.gender === "female"}
-                        onChange={this.handleChange}
+                        //checked={this.state.gender === "female"}
+                        //onChange={this.handleChange}
                         />
                         Female
                     </label>
@@ -214,8 +215,8 @@ class signupForm extends Component {
                     <input
                         type = "checkbox"
                         value = {this.state.checkedTrainer}
-                        onChange = {this.handleCheckboxChange}
-                        checked = {this.state.checkedTrainer}
+                        //onChange = {this.handleCheckboxChange}
+                        //checked = {this.state.checkedTrainer}
                     />
                     
                     <br/>

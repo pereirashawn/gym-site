@@ -38,30 +38,29 @@ function Login() {
             
             <div className='login'>
                 <Link to="/" className='login-logo'>
-                    BeFit <i class="fas fa-dumbbell"></i>
+                    BeFit <i className="fas fa-dumbbell"></i>
                 </Link>
 
                 <div className='login-container'>
                     <h1>LOGIN</h1>
                     <form onSubmit={handleLogin} method='post'>
                         <h5>Email</h5>
-                        <input type='text' 
+                        <input type='text' required
                         value={email} 
                         onChange={e => setEmail(e.target.value)}>
                         </input>
 
                         <h5>Password</h5>
-                        <input type='password'
+                        <input type='password' required
                         value={password}
                         onChange={e => setPassword(e.target.value)}>  
                         </input>
 
                         <button type='submit' className='login-button'>LOGIN</button>
 
-                        <p>Do not have an account yet?</p>
-                        <p>Create one right away!</p>
-
-                        <button className='signup'>SIGN UP</button>
+                        <p>Do not have an account yet? <Link to='/signup' className='signup-link'>Signup</Link></p>
+                
+                        
 
                     </form>
                 </div>
